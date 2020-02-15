@@ -1,0 +1,14 @@
+li{
+    text-align: left;
+    margin: 0 20%;
+    padding-top: 0.5%;
+}
+
+#header{
+text-decoration: underline;
+}
+
+.footer{
+    padding-top: 10px;
+    text-align: center;
+}
