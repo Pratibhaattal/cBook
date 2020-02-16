@@ -21,19 +21,17 @@ import {
 export class AppViewComponent implements OnInit {
   contactsArray: Contact[];
 
-  constructor(private mcs: ManageContactService, private route: Router) {}
+  constructor(private mcs: ManageContactService, private route: Router) { }
 
   ngOnInit() {
     this.contactsArray = this.mcs.getall();
-    // console.log(this.contactsArray);
   }
   deleteUserContact(usercon: Contact) {
-    if(confirm("Are you sure to delete?")){
+    if (confirm("Are you sure to delete?")) {
       this.mcs.deleteContact(usercon);
     }
   }
   toggleStatus(userconId) {
-    // console.log(userconId);
     this.mcs.changeStatus(userconId);
   }
   editUserContact(usercon: Contact) {
@@ -41,9 +39,8 @@ export class AppViewComponent implements OnInit {
     this.route.navigate(['/edit'])
   }
 
-  onSelectFname(event:any) {
+  onSelectFname(event: any) {
     const val = event.target.value;
-    // console.log(val);
 
     if (val === 'Ascending (A-Z)') {
       this.contactsArray.sort(function (a, b) {
@@ -68,9 +65,8 @@ export class AppViewComponent implements OnInit {
     }
   }
 
-  onSelectLname(event:any) {
+  onSelectLname(event: any) {
     const val = event.target.value;
-    // console.log(val);
 
     if (val === 'Ascending (A-Z)') {
       this.contactsArray.sort(function (a, b) {
@@ -95,9 +91,9 @@ export class AppViewComponent implements OnInit {
     }
   }
 
-  onSelectID(event:any){
+  onSelectID(event: any) {
     const val = event.target.value;
-    if(val === 'Lowest first'){
+    if (val === 'Lowest first') {
       this.contactsArray.sort(function (a, b) {
         if (a.id < b.id) {
           return -1;
@@ -107,7 +103,7 @@ export class AppViewComponent implements OnInit {
         }
         return 0;
       });
-    }else if(val === 'Highest first'){
+    } else if (val === 'Highest first') {
       this.contactsArray.sort(function (a, b) {
         if (a.id > b.id) {
           return -1;

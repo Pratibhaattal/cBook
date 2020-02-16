@@ -1,10 +1,13 @@
 <div class="m-3  row">
-  
-  <div class="col-sm-9	"> <h2>Contact Details</h2></div>
-  
-  <div class="col-sm-3">  <a [routerLink]="['/add']"  style="float: right;" class="btn btn-success ml-2 ">New Contact</a>
-</div>
+
+  <div class="col-sm-9	">
+    <h2>Contact Details</h2>
   </div>
+
+  <div class="col-sm-3"> <a [routerLink]="['/add']" style="float: right;" class="btn btn-success ml-2 "> Add New
+      Contact</a>
+  </div>
+</div>
 <div>
   <table class="table table-bordered">
     <thead>
@@ -42,20 +45,12 @@
         <td>{{curr.lastname}}</td>
         <td>{{curr.email}}</td>
         <td>{{curr.phone}}</td>
-        <!-- [ngClass]="{
-                  'list-group-item-success' : curr.status==='Active',
-                  'list-group-item-danger' : curr.status==='Inactive'
-              }" -->
-        <td ><b>{{curr.status|uppercase}}</b></td>
+        <td><b>{{curr.status|uppercase}}</b></td>
         <td>
           <button class="btn btn-warning" (click)="editUserContact(curr)">Edit</button>
-          <!-- [disabled]="curr.status!=='Inactive'" -->
-          <!-- <button class="btn btn-success ml-1" (click)="toggleStatus(curr.id)">Toggle Status</button> -->
           <button class="btn btn-danger ml-1" (click)="deleteUserContact(curr)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
-
-

@@ -26,7 +26,6 @@ export class EditContactComponent implements OnInit {
   
     const uid=localStorage.getItem('uid');
     const data= this.mcs.getDataForID(+uid);
-    // console.log(data);
     
     this.addForm.setValue(data);
   }
